@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="parent" class="net.beachchou.spring.ioc.bean.SimpleBean">
+        <property name="i" value="1"/>
+        <property name="str" value="parent"/>
+    </bean>
+    <bean id="child" class="net.beachchou.spring.ioc.bean.ChildBean" parent="parent">
+        <property name="str" value="child"/>
+        <property name="l" value="1"/>
+    </bean>
+    
+    <bean id="abstract" abstract="true" class="net.beachchou.spring.ioc.bean.AbstractBean">
+        <property name="i" value="1"/>
+        <property name="str" value="parent"/>
+    </bean>
+    <bean id="simpleChild" class="net.beachchou.spring.ioc.bean.SimpleBean" parent="abstract">
+        <property name="str" value="child"/>
+        <property name="l" value="1"/>
+    </bean>
+    
+    <bean id="noClass" abstract="true">
+        <property name="i" value="1"/>
+        <property name="str" value="parent"/>
+    </bean>
+    <bean id="simple" class="net.beachchou.spring.ioc.bean.SimpleBean" parent="noClass">
+        <property name="str" value="child"/>
+        <property name="l" value="1"/>
+    </bean>
+</beans>

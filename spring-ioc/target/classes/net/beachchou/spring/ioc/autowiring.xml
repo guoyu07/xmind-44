@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="noAutowire" class="net.beachchou.spring.ioc.DependenciesDetail" autowire="no" autowire-candidate="false"/>        
+    <bean id="autowiringByType" class="net.beachchou.spring.ioc.DependenciesDetail" autowire="byType"/>        
+    <bean id="autowiringByName" class="net.beachchou.spring.ioc.DependenciesDetail" autowire="byName"/>     
+    <bean id="autowiringByConstructor" class="net.beachchou.spring.ioc.DependenciesDetail" autowire="constructor"/>        
+</beans>
